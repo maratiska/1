@@ -1,0 +1,12 @@
+import java.util.Scanner;
+public class Main {
+   public static boolean isPositive(int x) {
+    return x > 0;
+  }
+  public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    System.out.println("Введите число ( больше или меньше 0 ): ");
+    int x1  = in.nextInt();
+    System.out.println("x = " + x1 + ", результат: " + isPositive(x1)); 
+  }
+}
