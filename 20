@@ -1,0 +1,54 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class RemoveNegativeNumbers {
+    public int[] deleteNegative(int[] arr) {
+        List<Integer> positiveNumbers = new ArrayList<>();
+
+        for (int num : arr) {
+            if (num >= 0) {
+                positiveNumbers.add(num);
+            }
+        }
+
+        int[] result = new int[positiveNumbers.size()];
+        for (int i = 0; i < positiveNumbers.size(); i++) {
+            result[i] = positiveNumbers.get(i);
+        }
+
+        return result;
+    }
+
+    public int[] readArray(Scanner scanner) {
+        System.out.print("Введите количество элементов массива: ");
+        int size = scanner.nextInt();
+        int[] array = new int[size];
+
+        System.out.println("Введите элементы массива:");
+        for (int i = 0; i < size; i++) {
+            array[i] = scanner.nextInt();
+        }
+        return array;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        RemoveNegativeNumbers removeNegative = new RemoveNegativeNumbers();
+        int[] arr = removeNegative.readArray(scanner);
+        int[] result = removeNegative.deleteNegative(arr);
+
+        System.out.print("Результат: [");
+        for (int i = 0; i < result.length; i++) {
+            System.out.print(result[i]);
+            if (i < result.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("]");
+
+        scanner.close(); 
+    }
+}
+
+
