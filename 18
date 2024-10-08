@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите размер массива: ");
+        int n = scanner.nextInt();
+        int[] arr = new int[n];
+        System.out.println("Введите " + n + " элементов массива:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextInt();
+        }
+        System.out.print("Исходный массив: [");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]);
+            if (i < arr.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("]");
+        reverse(arr);
+
+        System.out.print("Массив после реверса: [");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]);
+            if (i < arr.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("]");
+    }
+
+    public static void reverse(int[] arr) {
+        int left = 0;
+        int right = arr.length - 1;
+        while (left < right) {
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            left++;
+            right--;
+        }
+    }
+}
+
+
