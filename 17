@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите размер массива: ");
+        int n = scanner.nextInt();
+        int[] arr = new int[n];
+        System.out.println("Введите " + n + " элементов массива:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextInt();
+        }
+        System.out.print("Введите значение для вставки: ");
+        int x = scanner.nextInt();
+        System.out.print("Введите позицию для вставки (0 до " + n + "): ");
+        int pos = scanner.nextInt();
+        int[] newArr = add(arr, x, pos);
+        System.out.print("Новый массив: [");
+        for (int i = 0; i < newArr.length; i++) {
+            System.out.print(newArr[i]);
+            if (i < newArr.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("]");
+    }
+    public static int[] add(int[] arr, int x, int pos) {
+        int[] newArr = new int[arr.length + 1];
+        for (int i = 0; i < pos; i++) {
+            newArr[i] = arr[i];
+        }
+        newArr[pos] = x;
+        for (int i = pos; i < arr.length; i++) {
+            newArr[i + 1] = arr[i];
+        }
+        return newArr; 
+    }
+}
