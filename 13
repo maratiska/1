@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class EqualNumbers {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите число: ");
+        int number = scanner.nextInt();
+
+        System.out.println("Все цифры одинаковы: " + equalNum(number));
+    }
+    
+    public static boolean equalNum(int x) {
+        int lastDigit = x % 10;
+
+        while (x > 0) {
+            if (x % 10 != lastDigit) {
+                return false; 
+            }
+            x /= 10; 
+        }
+        
+        return true;
+    }
+}
