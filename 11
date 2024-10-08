@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class ReverseNumbers {0
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+      
+        System.out.print("Введите число: ");
+        int number = scanner.nextInt();
+  
+        System.out.println(reverseListNums(number));
+    }
+    
+    public static String reverseListNums(int x) {
+        StringBuilder result = new StringBuilder();
+
+        for (int i = x; i >= 0; i--) {
+            result.append(i);
+            if (i != 0) {
+                result.append(" ");
+            }
+        }
+
+        return result.toString();
+    }
+}
