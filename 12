@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Power {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите число (x): ");
+        int base = scanner.nextInt();
+
+        System.out.print("Введите степень (y): ");
+        int exponent = scanner.nextInt();
+
+        System.out.println("Результат: " + pow(base, exponent));
+    }
+    
+    public static int pow(int x, int y) {
+        int result = 1; 
+
+        for (int i = 0; i < y; i++) {
+            result *= x;
+        }
+        
+        return result; 
+    }
+}
