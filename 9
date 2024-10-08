@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class AgeDescription {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите возраст: ");
+        int age = scanner.nextInt();
+        System.out.println(age(age));
+    }
+    public static String age(int x) {
+        if (x % 100 >= 11 && x % 100 <= 14) {
+            return x + " лет";
+        }
+        int lastDigit = x % 10;
+        if (lastDigit == 1) {
+            return x + " год";
+        } else if (lastDigit >= 2 && lastDigit <= 4) {
+            return x + " года";
+        } else {
+            return x + " лет";
+        }
+    }
+}
